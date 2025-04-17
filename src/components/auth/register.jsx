@@ -31,51 +31,61 @@ const Register = () => {
     };
 
     return (
-        <div className="relative flex min-h-screen items-center justify-center bg-[url('/assets/images/map.svg')] bg-cover bg-center bg-no-repeat px-6 py-10 dark:bg-[#060818] sm:px-16">
-            <div className="relative flex w-full max-w-[1502px] flex-col justify-between overflow-hidden rounded-md bg-white/60 backdrop-blur-lg dark:bg-black/50 lg:min-h-[500px] lg:flex-row lg:gap-10 xl:gap-0">
-                <div className="relative hidden w-full items-center justify-center p-5 lg:inline-flex lg:max-w-[835px] xl:-ms-28">
-                    <a href="/" className="ms-24 block">
-                        <img src="/assets/images/ira-brand-logo.png" alt="Logo" className="w-full" />
-                    </a>
-                </div>
-                <div className="relative flex w-full flex-col items-center justify-center gap-6 px-4 pb-16 pt-6 sm:px-6 lg:max-w-[667px]">
-                    <div className="w-full max-w-[440px] lg:mt-16">
-                        <div className="mb-10">
-                            <h1 className="text-3xl font-extrabold uppercase !leading-snug text-primary md:text-4xl">Sign Up</h1>
-                            <p className="text-base font-bold leading-normal text-white-dark">Create your account</p>
-                        </div>
-                        <form className="space-y-5 dark:text-white" onSubmit={handleRegister}>
+        <div
+        className="relative flex h-screen items-center justify-center bg-cover bg-center bg-no-repeat px-4 sm:px-10"
+        style={{ backgroundImage: "url('/assets/images/map.png')" }}
+      >
+        <div className="relative z-10 flex w-full max-w-[800px] flex-col justify-between overflow-hidden rounded-xl backdrop-blur-lg bg-white/50 lg:min-h-[400px] lg:flex-row shadow-xl">
+          {/* Left Section with Logo */}
+          <div className="relative hidden w-full items-center justify-center lg:flex lg:max-w-[700px] xl:-ms-28">
+            <div className="absolute inset-y-0 w-8 "></div>
+            <div className="ltr:xl:-skew-x-[14deg] rtl:xl:skew-x-[14deg]">
+              <a href="/" className="block ms-24 mr-1">
+                <img src="/assets/images/ira-brand-logo.png" alt="Logo" className="ml-4 px-2 w-full" />
+              </a>
+            </div>
+          </div>
+          {/* Login Form Section */}
+          <div className="relative flex w-full flex-col items-center justify-center gap-6 px-4 py-4 sm:px-6 lg:max-w-[667px] bg-gradient-to-r from-[#E27F34]/5 to-transparent">
+            <div className="w-full max-w-[440px]">
+              <div className="mb-10 text-center lg:text-left">
+                <h1 className="text-3xl font-extrabold uppercase text-[#E27F34] md:text-4xl">Sign Up</h1>
+                <p className="text-base font-medium text-gray-700 mt-1">
+                  Enter your details & register your self
+                </p>
+              </div>
+              <form className="space-y-5 dark:text-gray-700" onSubmit={handleRegister}>
                             <div>
                                 <label htmlFor="firstName">First Name</label>
-                                <input id="firstName" type="text" name="firstName" placeholder="Enter First Name" className="form-input w-full" onChange={handleChange} />
+                                <input id="firstName" type="text" name="firstName" placeholder="Enter First Name" className="form-input w-full px-3 py-2 rounded-lg border border-gray-300" onChange={handleChange} />
                             </div>
                             <div>
                                 <label htmlFor="lastName">Last Name</label>
-                                <input id="lastName" type="text" name="lastName" placeholder="Enter Last Name" className="form-input w-full" onChange={handleChange} />
+                                <input id="lastName" type="text" name="lastName" placeholder="Enter Last Name" className="form-input w-full px-3 py-2 rounded-lg border border-gray-300" onChange={handleChange} />
                             </div>
                             <div>
                                 <label htmlFor="email">Email</label>
-                                <input id="email" type="email" name="email" placeholder="Enter Email" className="form-input w-full" onChange={handleChange} />
+                                <input id="email" type="email" name="email" placeholder="Enter Email" className="form-input w-full px-3 py-2 rounded-lg border border-gray-300" onChange={handleChange} />
                             </div>
                             <div>
                                 <label htmlFor="password">Password</label>
-                                <input id="password" type="password" name="password" placeholder="Enter Password" className="form-input w-full" onChange={handleChange} />
+                                <input id="password" type="password" name="password" placeholder="Enter Password" className="form-input w-full px-3 py-2 rounded-lg border border-gray-300" onChange={handleChange} />
                             </div>
                             <div>
                                 <label htmlFor="confirmPassword">Confirm Password</label>
-                                <input id="confirmPassword" type="password" name="confirmPassword" placeholder="Confirm Password" className="form-input w-full" onChange={handleChange} />
+                                <input id="confirmPassword" type="password" name="confirmPassword" placeholder="Confirm Password" className="form-input w-full px-3 py-2 rounded-lg border border-gray-300" onChange={handleChange} />
                             </div>
                             {error && <p className="text-red-500">{error}</p>}
-                            <button type="submit" className="btn btn-gradient !mt-6 w-full border-0 uppercase">Register</button>
+                            <button type="submit" className="w-full mt-6 bg-gradient-to-r from-[#E27F34] to-blue-600 text-white py-2.5 rounded-md font-bold uppercase tracking-wide shadow-md hover:opacity-90 transition">Register</button>
                         </form>
-                        <div className="text-center dark:text-white mt-4">
+                        <div className="text-center dark:text-gray-700 mt-4">
                             Already have an account?
-                            <a href="/login" className="uppercase text-primary underline transition hover:text-black dark:hover:text-white">Sign In</a>
+                            <a href="/login" className="uppercase text-[#E27F34] underline transition hover:text-black dark:hover:text-gray-700">Sign In</a>
                         </div>
-                    </div>
-                </div>
             </div>
+          </div>
         </div>
+      </div>
     );
 };
 
