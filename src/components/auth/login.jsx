@@ -12,8 +12,8 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    setError(null); // Reset error state
-
+    setError(null);
+  
     try {
       const response = await fetch("https://bknd.ira.chat/api/auth/local", {
         method: "POST",
@@ -21,19 +21,19 @@ const Login = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          identifier: form.username, // Change 'username' to 'identifier'
+          identifier: form.username,
           password: form.password,
         }),
       });
-
+  
       if (!response.ok) {
         const errorData = await response.json();
         throw new Error(errorData.error.message || "Login failed");
       }
-
+  
       const data = await response.json();
-      sessionStorage.setItem("token", data.jwt); // Store token (usually 'jwt' in Strapi)
-      navigate("/home"); // Redirect to home page
+      sessionStorage.setItem("token", data.jwt);
+      navigate("/home", { state: { showCelebration: true } }); // Add state
     } catch (err) {
       setError(err.message || "Login failed. Please check your credentials.");
     }

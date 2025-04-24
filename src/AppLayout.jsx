@@ -1,3 +1,4 @@
+// AppLayout.jsx
 import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
 import Sidebar from "./components/sidebar/sidebar";
@@ -11,14 +12,17 @@ const AppLayout = () => {
   };
 
   return (
-    <div className="app-layout flex h-screen overflow-hidden">
-      <div className={`transition-all duration-300 ease-in-out ${isSidebarOpen ? 'w-64' : 'w-0'}`}>
-        {isSidebarOpen && <Sidebar toggleSidebar={toggleSidebar} />}
-      </div>
-      <div className="flex-1 flex flex-col">
+    <div className="app-layout flex h-screen bg-gray-50">
+      <Sidebar toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen} />
+      
+      <div className={`flex-1 flex flex-col transition-all duration-300 ${
+        isSidebarOpen ? 'md:ml-64' : 'md:ml-0'
+      }`}>
         <Header toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen} />
-        <main className="flex-1 p-4 bg-gray-100 overflow-auto">
-          <Outlet />
+        <main className="flex-1 p-4 md:p-6 overflow-auto">
+          <div className="">
+            <Outlet />
+          </div>
         </main>
       </div>
     </div>
