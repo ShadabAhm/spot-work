@@ -13,10 +13,20 @@ const MENU = [
     isTitle: false
   },
   {
-    label: "Main Menu",
+    label: "Others",
     isTitle: true
   },
-  // Add more static menu items as needed
+  {
+    label: "Profile",
+    icon: "profle",
+    link: "/profile",
+    isTitle: false
+  },
+  {
+    label: "Subjects",
+    isTitle: true
+  },
+  
 ];
 
 const Sidebar = ({ toggleSidebar, isSidebarOpen }) => {
@@ -143,7 +153,7 @@ const Sidebar = ({ toggleSidebar, isSidebarOpen }) => {
               <React.Fragment key={`${item.label}-${index}`}>
                 {item.isTitle ? (
                   <li className="mt-4 mb-2 first:mt-2">
-                    <span className="block px-3 py-2 text-xs font-semibold uppercase tracking-wider text-gray-500">
+                    <span className="block px-3 py-2 text-xl font-bold uppercase tracking-wider text-gray-400">
                       {item.label}
                     </span>
                   </li>
@@ -153,9 +163,9 @@ const Sidebar = ({ toggleSidebar, isSidebarOpen }) => {
                       <div className="space-y-1">
                         <button
                           onClick={() => toggleSubMenu(item.label)}
-                          className={`w-full flex items-center justify-between px-3 py-2 rounded-md text-sm font-medium ${
+                          className={`w-full flex items-center justify-between px-3 py-2 rounded-md text-lg font-medium ${
                             isItemActive(item) 
-                              ? 'bg-gray-100 text-gray-900' 
+                              ? 'bg-gray-100 text-[#E27F34]'
                               : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900'
                           }`}
                         >
@@ -180,14 +190,14 @@ const Sidebar = ({ toggleSidebar, isSidebarOpen }) => {
                           </svg>
                         </button>
                         {expandedItems.includes(item.label) && (
-                          <ul className="pl-4 mt-1 space-y-1 border-l-2 border-gray-200 max-h-60 overflow-y-auto">
+                          <ul className="pl-2 mt-1 space-y-1 border-l-2 border-gray-200">
                             {item.subItems.map((subItem, subIndex) => (
                               <li key={`${subItem.label}-${subIndex}`}>
                                 <Link
                                   to={subItem.link}
-                                  className={`block px-3 py-2 rounded-md text-sm font-medium ${
+                                  className={`block px-2 py-2 rounded-md text-sm font-medium ${
                                     location.pathname === subItem.link
-                                      ? 'bg-gray-100 text-gray-900'
+                                      ? 'bg-[#E27F34] text-white'
                                       : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
                                   }`}
                                 >
@@ -211,10 +221,10 @@ const Sidebar = ({ toggleSidebar, isSidebarOpen }) => {
                     ) : (
                       <Link
                         to={item.link}
-                        className={`block px-3 py-2 rounded-md text-sm font-medium ${
+                        className={`block py-2 rounded-md text-lg font-bold ${
                           isItemActive(item)
-                            ? 'bg-gray-100 text-gray-900'
-                            : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900'
+                            ? 'bg-[#E27F34] text-white'
+                            : 'text-[#E27F34] hover:bg-gray-100'
                         }`}
                       >
                         <div className="flex items-center">

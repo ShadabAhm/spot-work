@@ -155,7 +155,7 @@ const Pricing = () => {
             {/* Pricing Section */}
             <section className="relative overflow-hidden bg-white dark:bg-dark mb-4">
                 <div className="container mx-auto px-4">
-                    <div className="w-full px-2">
+                    <div className="w-full px-2 mt-2">
                         <div className="mx-auto mb-10 max-w-[510px] text-center">
                             <h2 className="mb-3 text-xl leading-[1.208] font-bold text-[#E27F34] dark:text-[#E27F34] sm:text-4xl md:text-[40px]">
                                 Choose a Plan

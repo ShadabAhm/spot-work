@@ -153,7 +153,7 @@ export default function Home() {
                                     <h2 className="text-xl font-bold text-[#E27F34]">{category}</h2>
                                 </div>
 
-                                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 px-4">
                                     {servicesToDisplay.map((service, index) => (
                                         <div
                                             key={index}
@@ -169,7 +169,7 @@ export default function Home() {
                                     ))}
                                 </div>
                                 {services.length > itemsPerPage && (
-                                    <div className="flex justify-end items-center mt-2">
+                                    <div className="flex justify-end items-center mt-2 mr-4">
                                         <button
                                             onClick={() => toggleCategory(category)}
                                             className="text-blue-600 hover:underline text-sm"
