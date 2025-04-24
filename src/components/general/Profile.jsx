@@ -86,16 +86,16 @@ const Profile = () => {
                             <p className="text-xl font-semibold">{user.firstName || "Demo"}</p>
                         </div>
 
-                        {/* Email Section */}
-                        <div className="border-b border-gray-200 pb-4">
-                            <h2 className="text-sm font-medium text-gray-500 mb-1">Email</h2>
-                            <p className="text-xl font-semibold">{user.email || "demoaccount1@gmail.com"}</p>
-                        </div>
-
                         {/* Last Name Section */}
                         <div className="border-b border-gray-200 pb-4">
                             <h2 className="text-sm font-medium text-gray-500 mb-1">Last Name</h2>
                             <p className="text-xl font-semibold">{user.lastName || "Account1"}</p>
+                        </div>
+                                
+                        {/* Email Section */}
+                        <div className="border-b border-gray-200 pb-4">
+                            <h2 className="text-sm font-medium text-gray-500 mb-1">Email</h2>
+                            <p className="text-xl font-semibold">{user.email || "demoaccount1@gmail.com"}</p>
                         </div>
 
                         {/* Joined On Section */}
@@ -115,7 +115,7 @@ const Profile = () => {
                     </div>
 
                     {/* Display Name at Bottom */}
-                    <div className="mt-10 pt-6 border-t border-gray-200">
+                    <div className="mt-4 pt-6 border-t border-gray-200">
                         <p className="text-xl font-bold text-center text-gray-800">
                             {`${user.firstName || "Demo"} ${user.lastName || "Account1"}`}
                         </p>
